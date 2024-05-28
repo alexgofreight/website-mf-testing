@@ -1,0 +1,19 @@
+{
+  "series": [
+    { "key": "star-war", "name": "STAR WAR", "list": [
+      { "no": "", "name": "", "img": "", "amount": 3, "price": 300 },
+      { "no": "", "name": "", "img": "", "amount": 2, "price": 300 },
+      { "no": "", "name": "", "img": "", "amount": 3, "price": 100 }
+    ]},
+    { "key": "ideas", "name": "IDEAS", "list": [
+      { "no": "", "name": "", "img": "", "amount": 1, "price": 500 },
+      { "no": "", "name": "", "img": "", "amount": 1, "price": 300 },
+      { "no": "", "name": "", "img": "", "amount": 3, "price": 300 }
+    ]},
+    { "key": "technic", "name": "TECHNIC", "list": [
+      { "no": "", "name": "", "img": "", "amount": 5, "price": 80 },
+      { "no": "", "name": "", "img": "", "amount": 2, "price": 600 },
+      { "no": "", "name": "", "img": "", "amount": 2, "price": 1000 }
+    ]}
+  ]
+}
