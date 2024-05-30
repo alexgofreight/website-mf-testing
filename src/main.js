@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from './router';
 import pinia from './store';
 import { useProductsStore } from './store/products';
+import microApp from '@micro-zoe/micro-app'
 
 const app = createApp(App);
 app.use(router);
@@ -17,12 +18,13 @@ async function loadInitialData() {
   const series = data.series.map(series => ({
     name: series.name,
     key: series.key,
+    img: series.img,
+    list: series.list
   }));
 
   const products = data.series.flatMap(series => 
     series.list.map(product => ({
       ...product,
-      series: series.name,
     }))
   );
 
@@ -32,4 +34,11 @@ async function loadInitialData() {
 
 loadInitialData().then(() => {
   app.mount('#app');
+  microApp.start({
+    tagName: 'micro-app-lego'
+  });
 });
+
+window.unmount = () => {
+  app.unmount()
+}

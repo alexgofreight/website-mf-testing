@@ -1,19 +1,19 @@
 {
   "series": [
-    { "key": "star-war", "name": "STAR WAR", "list": [
-      { "no": "", "name": "", "img": "", "amount": 3, "price": 300 },
-      { "no": "", "name": "", "img": "", "amount": 2, "price": 300 },
-      { "no": "", "name": "", "img": "", "amount": 3, "price": 100 }
+    { "key": "starwar", "name": "STAR WAR", "img": "/img/starwar.avif", "list": [
+      { "no": "4002019", "name": "Christmas X-Wing", "img": "https://www.brickeconomy.com/resources/images/sets/lego-4002019-1_large.jpg", "quantity": 3, "price": 800 },
+      { "no": "75192", "name": "Millennium Falcon", "img": "https://www.brickeconomy.com/resources/images/sets/lego-75192-1_large.jpg", "quantity": 2, "price": 300 },
+      { "no": "75095", "name": "TIE Fighter", "img": "https://www.brickeconomy.com/resources/images/sets/lego-75095-1_large.jpg", "quantity": 3, "price": 150 }
     ]},
-    { "key": "ideas", "name": "IDEAS", "list": [
-      { "no": "", "name": "", "img": "", "amount": 1, "price": 500 },
-      { "no": "", "name": "", "img": "", "amount": 1, "price": 300 },
-      { "no": "", "name": "", "img": "", "amount": 3, "price": 300 }
+    { "key": "ideas", "name": "IDEAS", "img": "/img/ideas.jpg", "list": [
+      { "no": "21317", "name": "Steamboat Willie", "img": "https://www.brickeconomy.com/resources/images/sets/lego-21317-1_large.jpg", "quantity": 1, "price": 500 },
+      { "no": "21318", "name": "Treehouse", "img": "https://www.brickeconomy.com/resources/images/sets/lego-21318-1_large.jpg", "quantity": 1, "price": 300 },
+      { "no": "21303", "name": "WALL-E", "img": "https://www.brickeconomy.com/resources/images/sets/lego-21303-1_large.jpg", "quantity": 3, "price": 300 }
     ]},
-    { "key": "technic", "name": "TECHNIC", "list": [
-      { "no": "", "name": "", "img": "", "amount": 5, "price": 80 },
-      { "no": "", "name": "", "img": "", "amount": 2, "price": 600 },
-      { "no": "", "name": "", "img": "", "amount": 2, "price": 1000 }
+    { "key": "batman", "name": "BATMAN",  "img": "/img/batman.jpg", "list": [
+      { "no": "40433", "name": "1989 Batmobile", "img": "https://www.brickeconomy.com/resources/images/sets/lego-40433-1_large.jpg", "quantity": 5, "price": 80 },
+      { "no": "70922", "name": "The Joker Manor", "img": "https://www.brickeconomy.com/resources/images/sets/lego-70922-1_large.jpg", "quantity": 2, "price": 600 },
+      { "no": "70923", "name": "The Bat-Space Shuttle", "img": "https://www.brickeconomy.com/resources/images/sets/lego-70923-1_large.jpg", "quantity": 2, "price": 1000 }
     ]}
   ]
 }

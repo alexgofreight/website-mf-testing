@@ -16,6 +16,6 @@ export default {
 </script>
 <style>
 .content {
-  padding-top: 60px; 
+  padding: 60px 20px;
 }
 </style>

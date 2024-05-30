@@ -1,14 +1,14 @@
 <template>
   <div>
-    <h1>Cart</h1>
-    <div v-for="item in cartItems" :key="item.id">
+    <h1>Cart Page</h1>
+    <div v-for="item in cartItems" :key="item.id" class="cart-item">
       <p>Name: {{ item.name }}</p>
       <p>Quantity: {{ item.quantity }}</p>
       <p>Price: {{ item.price }}</p>
     </div>
     <p>Total: {{ totalPrice }}</p>
     <button @click="clearCart">Clear Cart</button>
-    <button @click="checkout">Checkout</button>
+    <button @click="checkout">Send Msg to FMS</button>
   </div>
 </template>
 
@@ -33,8 +33,30 @@ export default {
       store.clearCart();
     },
     checkout() {
-      // Logic for checkout
+      
     }
   }
 };
 </script>
+<style scoped>
+  .cart-item {
+    border: 2px solid rgb(255, 213, 2);
+    margin: 5px;
+    padding: 0 10px;
+    width: 45%;
+    display: inline-block;
+  }
+  
+  @media (max-width: 716px) {
+    .cart-item {
+      width: 40%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .cart-item {
+      width: 100%;
+    }
+  }
+  
+</style>

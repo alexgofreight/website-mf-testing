@@ -1,22 +1,15 @@
 <template>
   <div>
-    <h1>Home Page</h1>
-    <!-- <micro-app name='my-app123' url='https://k8cchaha.github.io/collection/'></micro-app> -->
-    <!-- <micro-app name='my-app321' url='https://k8cchaha.github.io/collection/'></micro-app> -->
+    <h1>Other Page</h1>
     <main>
-      <button @click="showLoginModal = true" class="login-btn">登入</button>
-      
+      <micro-app-lego name='my-app123' url='https://k8cchaha.github.io/collection/'></micro-app-lego>
     </main>
     <hr>
     <section class="verify-item">
       <h2>Verify Item:</h2>
       <div>
         <input type="checkbox" name="" id="aa">
-        <label for="aa">1. Full Screen Mask</label>
-      </div>
-      <div>
-        <input type="checkbox" name="" id="bb">
-        <label for="bb">2. Popup Dialog</label>
+        <label for="aa">1. Multiple Nested</label>
       </div>
     </section>
     <LoginModal v-if="showLoginModal" @close="showLoginModal = false"/>
@@ -38,7 +31,3 @@ export default {
   }
 };
 </script>
-
-<style>
-
-</style>

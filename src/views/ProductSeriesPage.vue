@@ -1,25 +1,56 @@
 <template>
   <div>
     <h1>Series: {{ seriesName }}</h1>
-    <router-link v-for="product in seriesProducts" :key="product.id" :to="`/products/${product.id}`">{{ product.name }}</router-link>
+    <main class="series-list">
+      <div v-for="set in sets" :key="set.no">
+        <ProductCard :product="set"/>
+      </div>
+    </main>
+    <hr>
+    <section class="verify-item">
+      <h2>Verify Item:</h2>
+      <div>
+        <input type="checkbox" name="" id="aa">
+        <label for="aa">1. Store</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="bb">
+        <label for="bb">2. Sizing</label>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import { useProductsStore } from '../store/products';
+import ProductCard from '../components/ProductCard.vue'
 
 export default {
   name: 'ProductSeriesPage',
+  components: {
+    ProductCard
+  },
+  data() {
+    return {
+      sets: [] 
+    }
+  },
   computed: {
     seriesName() {
       const store = useProductsStore();
       const series = store.series.find(s => s.key === this.$route.params.series);
       return series ? series.name : '';
     },
-    seriesProducts() {
-      const store = useProductsStore();
-      return store.products.filter(product => product.series === this.seriesName);
-    },
   },
+  mounted() {
+    const store = useProductsStore();
+    const series = store.series.find(s => s.key === this.$route.params.series);
+    this.sets = series ? series.list : []
+  }
 };
 </script>
+<style>
+.series-list {
+  display: flex;
+}
+</style>

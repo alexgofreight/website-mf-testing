@@ -1,14 +1,15 @@
 <template>
   <header>
     <nav>
-      <router-link to="/">Home</router-link>
+      <router-link to="/" class="nav-item">Home</router-link>
       <div class="dropdown" @mouseover="showDropdown = true" @mouseleave="showDropdown = false">
-        <router-link to="/products">Product</router-link>
+        <router-link to="/products" class="nav-item">Product</router-link>
         <div v-if="showDropdown" class="dropdown-content">
           <router-link v-for="series in seriesList" :key="series.key" :to="`/series/${series.key}`">{{ series.name }}</router-link>
         </div>
       </div>
-      <router-link to="/cart">Cart</router-link>
+      <router-link to="/cart" class="nav-item">Cart</router-link>
+      <router-link to="/other" class="nav-item">Others</router-link>
     </nav>
   </header>
 </template>
@@ -33,7 +34,8 @@ export default {
 
 <style>
 header {
-  background-color: #f8f9fa;
+  background-color: rgb(255, 213, 2);
+  height: 40px;
   padding: 10px;
   width: 100%;
   position: fixed;
@@ -48,6 +50,16 @@ nav {
   justify-content: space-around;
 }
 
+.nav-item {
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
 .dropdown {
   position: relative;
 }
@@ -59,6 +71,7 @@ nav {
   background-color: white;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  width: 120px;
 }
 
 .dropdown-content a {
