@@ -2,7 +2,7 @@
   <div>
     <h1>Series: {{ seriesName }}</h1>
     <main class="series-list">
-      <div v-for="set in sets" :key="set.no">
+      <div v-for="set in seriesProducts" :key="set.no">
         <ProductCard :product="set"/>
       </div>
     </main>
@@ -34,22 +34,17 @@ export default {
   components: {
     ProductCard
   },
-  data() {
-    return {
-      sets: [] 
-    }
-  },
   computed: {
     seriesName() {
       const store = useProductsStore();
       const series = store.series.find(s => s.key === this.$route.params.series);
       return series ? series.name : '';
     },
-  },
-  mounted() {
-    const store = useProductsStore();
-    const series = store.series.find(s => s.key === this.$route.params.series);
-    this.sets = series ? series.list : []
+    seriesProducts() {
+      const store = useProductsStore();
+      const series = store.series.find(s => s.key === this.$route.params.series);
+      return series ? series.list : [];
+    },
   }
 };
 </script>
