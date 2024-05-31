@@ -9,7 +9,6 @@
       </div>
       <p>Total: {{ totalPrice }}</p>
       <button @click="clearCart">Clear Cart</button>
-      <button @click="checkout" class="custom-btn">Send Msg to FMS</button>
     </main>
     <hr>
     <section class="verify-item">
@@ -18,12 +17,7 @@
         <input type="checkbox" name="" id="aa">
         <label for="aa">1. Keep Alive</label>
       </div>
-      <div>
-        <input type="checkbox" name="" id="bb">
-        <label for="bb">2. Communication</label>
-      </div>
     </section>
-    
   </div>
 </template>
 
@@ -46,9 +40,6 @@ export default {
     clearCart() {
       const store = useCartStore();
       store.clearCart();
-    },
-    checkout() {
-      window.microApp.dispatch({type: 'OHLAOHLA'})
     }
   }
 };

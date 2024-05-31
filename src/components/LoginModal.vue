@@ -1,6 +1,6 @@
 <template>
-  <div class="modal-overlay" @click.self="closeModal">
-    <div class="modal">
+  <div class="modal-overlay-lego" @click.self="closeModal">
+    <div class="modal-content-lego">
       <h2>登入</h2>
       <form @submit.prevent="handleLogin">
         <div>
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.modal-overlay {
+.modal-overlay-lego {
   position: fixed;
   top: 0;
   left: 0;
@@ -55,11 +55,15 @@ export default {
   align-items: center;
 }
 
-.modal {
+.modal-content-lego {
   background: white;
   padding: 20px;
   border-radius: 8px;
   width: 300px;
+}
+
+.modal-content-lego label {
+  margin-right: 10px;
 }
 
 .buttons {
@@ -70,9 +74,5 @@ export default {
 
 button {
   padding: 5px 10px;
-}
-
-.modal label {
-  margin-right: 10px;
 }
 </style>

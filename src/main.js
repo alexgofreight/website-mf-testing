@@ -42,18 +42,14 @@ loadInitialData().then(() => {
 
 window.unmount = () => {
   app.unmount();
-  // 解绑监听函数
+  // 卸載監聽函数
   window.microApp?.removeDataListener(dataListener)
 }
 
 function dataListener (data) {
-  console.log('来自主应用的数据', data)
+  console.log('来自主應用的數據', data);
+  alert('This is msg from FMS: ' + JSON.stringify(data));
 }
 
-// 监听数据变化，初始化时如果有数据则主动触发一次
+// 監聽數據變化，初始化時如果有數據則主動觸發一次
 window.microApp?.addDataListener(dataListener, true)
-// window.microApp?.addDataListener((data) => {
-//   console.log('child-vite addDataListener:', data)
-// })
-
-
