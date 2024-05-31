@@ -13,8 +13,10 @@ const routes = [
   { path: '/other', component: OtherPage }
 ];
 
+const path = process.env.NODE_ENV === 'production' ? '/website-mf-testing/' : ''
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(path),
   routes,
 });
 

@@ -17,6 +17,10 @@
         <input type="checkbox" name="" id="bb">
         <label for="bb">2. Sizing</label>
       </div>
+      <div>
+        <input type="checkbox" name="" id="bb">
+        <label for="bb">3. Prev/Next Page</label>
+      </div>
     </section>
   </div>
 </template>

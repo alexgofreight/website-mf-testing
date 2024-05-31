@@ -11,6 +11,10 @@ export default defineConfig({
       }
     }
   })],
+  base:
+    process.env.NODE_ENV === "production"
+      ? "/website-mf-testing"
+      : "/",
   // server: {
   //   headers: {
   //     'Access-Control-Allow-Origin': '*',

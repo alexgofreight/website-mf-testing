@@ -1,14 +1,29 @@
 <template>
   <div>
     <h1>Cart Page</h1>
-    <div v-for="item in cartItems" :key="item.id" class="cart-item">
-      <p>Name: {{ item.name }}</p>
-      <p>Quantity: {{ item.quantity }}</p>
-      <p>Price: {{ item.price }}</p>
-    </div>
-    <p>Total: {{ totalPrice }}</p>
-    <button @click="clearCart">Clear Cart</button>
-    <button @click="checkout">Send Msg to FMS</button>
+    <main>
+      <div v-for="item in cartItems" :key="item.id" class="cart-item">
+        <p>Name: {{ item.name }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+        <p>Price: {{ item.price }}</p>
+      </div>
+      <p>Total: {{ totalPrice }}</p>
+      <button @click="clearCart">Clear Cart</button>
+      <button @click="checkout" class="custom-btn">Send Msg to FMS</button>
+    </main>
+    <hr>
+    <section class="verify-item">
+      <h2>Verify Item:</h2>
+      <div>
+        <input type="checkbox" name="" id="aa">
+        <label for="aa">1. Keep Alive</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="bb">
+        <label for="bb">2. Communication</label>
+      </div>
+    </section>
+    
   </div>
 </template>
 
@@ -33,7 +48,7 @@ export default {
       store.clearCart();
     },
     checkout() {
-      
+      window.microApp.dispatch({type: 'OHLAOHLA'})
     }
   }
 };
