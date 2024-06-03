@@ -6,6 +6,8 @@
       <button @click="showGlobal(false)" class="login-btn">顯示全域變數</button>
       <button @click="showGlobal(true)" class="login-btn">顯示window全域變數</button>
       <button @click="sendMsg" class="login-btn">Send Msg to FMS</button>
+      <button @click="getParentDOM" class="login-btn">取得父層 DOM</button>
+      <button @click="getParentRootDOM" class="login-btn">取得父層 Root DOM</button>
     </main>
     <hr>
     <section class="verify-item">
@@ -54,6 +56,14 @@ export default {
     },
     sendMsg() {
       window.microApp.dispatch({msg: 'This is a blessing messages from the sub application'});
+    },
+    getParentDOM() {
+      const elem = document.getElementById('receiveMsg');
+      console.log(elem)
+    },
+    getParentRootDOM() {
+      const elem = document.getElementById('myModal');
+      console.log(elem)
     }
   }
 };
