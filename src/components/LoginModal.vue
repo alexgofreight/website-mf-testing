@@ -9,7 +9,7 @@
         </div>
         <div>
           <label for="password">密碼:</label>
-          <input type="password" id="password" v-model="password" required>
+          <input type="password" id="password" autocomplete="on" v-model="password" required>
         </div>
         <div class="buttons">
           <button type="button" @click="closeModal">取消</button>

@@ -2,12 +2,13 @@
   <div>
     <h1>Home Page</h1>
     <main>
-      <button @click="showLoginModal = true" class="login-btn">登入</button>
-      <button @click="showGlobal(false)" class="login-btn">顯示全域變數</button>
-      <button @click="showGlobal(true)" class="login-btn">顯示window全域變數</button>
-      <button @click="sendMsg" class="login-btn">Send Msg to FMS</button>
-      <button @click="getParentDOM" class="login-btn">取得父層 DOM</button>
-      <button @click="getParentRootDOM" class="login-btn">取得父層 Root DOM</button>
+      <button @click="showLoginModal = true" class="action-btn" style="color:red">Login</button>
+      <button @click="showGlobal(false)" class="action-btn">Show Child App var variable</button>
+      <button @click="showGlobal(true)" class="action-btn">Show Child App window variable</button>
+      <button @click="sendMsg" class="action-btn">Send Msg to Parent App</button>
+      <button @click="getParentDOM" class="action-btn">Get Parent DOM</button>
+      <button @click="setGetCookie" class="action-btn">Set & Get Cookie</button>
+      <button @click="getLocalStorage" class="action-btn">Get Local Storage</button>
     </main>
     <hr>
     <section class="verify-item">
@@ -27,6 +28,14 @@
       <div>
         <input type="checkbox" name="" id="dd">
         <label for="dd">4. Communication</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="ee">
+        <label for="ee">5. Set & Get Cookie</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="ff">
+        <label for="ee">6. Get local storage</label>
       </div>
     </section>
     <LoginModal v-if="showLoginModal" @close="showLoginModal = false"/>
@@ -55,22 +64,32 @@ export default {
       }
     },
     sendMsg() {
-      window.microApp.dispatch({msg: 'This is a blessing messages from the sub application'});
+      window.microApp.dispatch({msg: 'This is a blessing messages from the child application'});
     },
     getParentDOM() {
       const elem = document.getElementById('receiveMsg');
       console.log(elem)
     },
-    getParentRootDOM() {
-      const elem = document.getElementById('myModal');
-      console.log(elem)
+    setGetCookie() {
+      document.cookie = 'cookieX=12345';
+      console.log('Child App get cookie:', document.cookie);
+    },
+    getLocalStorage() {
+      const localData = localStorage.getItem('tracking::user-url-preference');
+      console.log('Child App get local storage:',localData);
     }
+  },
+  mounted() {
+    // document.cookie = 'cookieX=12345';
+    // console.log('Child App get cookie:', document.cookie);
+    // const localData = localStorage.getItem('tracking::user-url-preference');
+    // console.log('Child App get local storage:',localData);
   }
 };
 </script>
 
 <style>
-  .login-btn {
+  .action-btn {
     padding: 5px 10px;
     margin-right: 5px;
   }

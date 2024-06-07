@@ -15,7 +15,11 @@
       <h2>Verify Item:</h2>
       <div>
         <input type="checkbox" name="" id="aa">
-        <label for="aa">1. Keep Alive</label>
+        <label for="aa">1. Store Function</label>
+      </div>
+      <div>
+        <input type="checkbox" name="" id="aa">
+        <label for="bb">2. Keep Alive</label>
       </div>
     </section>
   </div>
